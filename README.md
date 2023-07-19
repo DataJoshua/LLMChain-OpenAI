@@ -1,24 +1,5 @@
-# README
+# LLM Chain made in Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a sample app with API that uses openai, langchain and vectoreStore Qdrant. Basically we can give the model information that will be stored inside a vectore store and we can ask question about that. The model will always search in the vector store for additional information so it will remember all the data given always.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Some good applications for this model is to upload large pdf archives and store all of it in a vectore database, so you can ask the model for information inside the pdf or any other type of document
