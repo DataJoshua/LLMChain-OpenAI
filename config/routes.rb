@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   get "/data", to: "data#new"
 
-  resources :chains 
+  resources :chains do  
+    resources :question, only: %i[create]
+    resources :teach, only: %i[create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -13,8 +16,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do 
-      resources :data, only: %i[create]
-      post "ask", to: "data#ask"  
+      resources :chains do
+        resources :question, only: %i[create]
+        resources :teach, only: %i[create]
+      end
     end
   end
 end
