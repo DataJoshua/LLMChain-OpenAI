@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do 
-      resources :chains do
+      resources :chains, only: %i[show] do
         resources :question, only: %i[create]
         resources :teach, only: %i[create]
       end
