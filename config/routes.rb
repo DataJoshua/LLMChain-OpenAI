@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get "/data", to: "data#new"
 
+  resources :interfaces
+  
   resources :chains do  
     resources :question, only: %i[create]
     resources :teach, only: %i[create]
