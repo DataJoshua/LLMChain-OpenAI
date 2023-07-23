@@ -1,9 +1,11 @@
 class DataController < ApplicationController
+  before_action :set_chain, only: %i[create ask]
+
   def index
   end
 
   def create
-    CLIENT.add_texts(
+    @chain.add_texts(
       texts: [data_params[:content]]
     )
     
@@ -11,7 +13,7 @@ class DataController < ApplicationController
   end
 
   def ask
-    @res = CLIENT.ask(question: ask_params[:content])
+    @res = @chain.ask(question: ask_params[:content])
   end
 
 
@@ -21,5 +23,11 @@ class DataController < ApplicationController
 
   def ask_params
     params.require(:question).permit(:content)
+  end
+
+  private
+
+  def set_chain
+    @chain = AiChain.new(index_name: "sample").client
   end
 end

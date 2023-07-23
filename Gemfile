@@ -83,3 +83,8 @@ end
 gem "dotenv-rails", "~> 2.8"
 
 gem "slim-rails", "~> 3.6"
+
+gem "devise"
+gem "interactor", "~> 3.1"
+
+gem "enumerize", "~> 2.7"

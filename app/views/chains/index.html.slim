@@ -1,0 +1,4 @@
+- @chains.each do |c|
+  h1
+    = c.index_name
+  = link_to "train or ask this model", chain_path(c)
