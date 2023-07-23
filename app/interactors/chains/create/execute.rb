@@ -3,7 +3,7 @@ module Chains
     class Execute
       include Interactor
 
-      delegate :user, :chain_params,  to: :context
+      delegate :user, :index_name,  to: :context
   
       def call
         context.fail!(error: "Chain not created") unless chain.save
@@ -12,7 +12,7 @@ module Chains
       private
   
       def chain
-        Chain.new(chain_params.merge(user: user))
+        Chain.new(index_name: "#{user.id}_#{index_name}", cluster_name: index_name , user: user)
       end
     end
   end

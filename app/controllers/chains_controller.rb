@@ -45,6 +45,6 @@ class ChainsController < ApplicationController
   end
 
   def create_chain
-    @create_chain = Chains::Create.call(user: current_user, chain_params: chain_params)
+    @create_chain = Chains::Create.call(user: current_user, index_name: chain_params[:index_name])
   end
 end

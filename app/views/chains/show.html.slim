@@ -1,5 +1,5 @@
 h1
-  = @chain.index_name
+  = @chain.cluster_name
 
 = form_with scope: :teach, url: chain_teach_index_path(@chain) do |f|
   = f.text_field :content
