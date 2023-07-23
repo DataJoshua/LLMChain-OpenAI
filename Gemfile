@@ -88,3 +88,5 @@ gem "devise"
 gem "interactor", "~> 3.1"
 
 gem "enumerize", "~> 2.7"
+
+gem "jwt", "~> 2.7"

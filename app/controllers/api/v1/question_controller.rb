@@ -1,6 +1,7 @@
 module Api
   module V1
     class QuestionController < ApiController
+      before_action :authenticate_key!
       before_action :set_chain
       before_action :set_client
       before_action ->{@form ||= QuestionForm.new }
