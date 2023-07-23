@@ -1,6 +1,8 @@
 class ChainsController < ApplicationController
   before_action :authenticate_user!
+  before_action -> { authorize! Chain }, only: %i[index new create]
   before_action :set_chain, only: %i[edit update destroy show]
+  before_action -> { authorize! @chain }, only: %i[show edit update destroy]
 
   def show
   end
@@ -14,7 +16,6 @@ class ChainsController < ApplicationController
   end
 
   def create
-    
     if create_chain.success?
       flash[:notice] = "chain created"
     else

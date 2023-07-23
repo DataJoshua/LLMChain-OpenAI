@@ -90,3 +90,5 @@ gem "interactor", "~> 3.1"
 gem "enumerize", "~> 2.7"
 
 gem "jwt", "~> 2.7"
+
+gem "action_policy", "~> 0.6.5"

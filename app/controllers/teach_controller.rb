@@ -2,6 +2,7 @@ class TeachController < ApplicationController
   before_action :authenticate_user!
   before_action :set_chain
   before_action :set_client
+  before_action ->{ authorize! @chain, with: TeachPolicy }
   before_action ->{ @form ||= TeachForm.new }
 
   def create

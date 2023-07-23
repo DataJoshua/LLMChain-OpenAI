@@ -3,8 +3,10 @@ module Api
     class TeachController < ApiController
       before_action :authenticate_key!
       before_action :set_chain
+      before_action -> { authorize! @chain, with: TeachPolicy } 
       before_action :set_client
       before_action ->{ @form ||= TeachForm.new }
+
     
       def create
         @form.assign_attributes(teach_params)

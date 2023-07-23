@@ -3,8 +3,9 @@ module Api
     class QuestionController < ApiController
       before_action :authenticate_key!
       before_action :set_chain
+      before_action -> { authorize! @chain, with: QuestionPolicy } 
       before_action :set_client
-      before_action ->{@form ||= QuestionForm.new }
+      before_action -> { @form ||= QuestionForm.new }
     
       def create
         @form.assign_attributes(question_params)
