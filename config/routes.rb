@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  root "data#index"
+  root "chains#index"
 
   get "/data", to: "data#new"
 

@@ -1,5 +1,6 @@
 class InterfacesController < ApplicationController
   before_action :authenticate_user!
+  before_action :skip_verify_authorized!
 
   def index
   end
