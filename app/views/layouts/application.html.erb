@@ -12,8 +12,16 @@
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-      <%= yield %>
+      <div class="flex">
+        <%= render "layouts/nav" %>
+        <main class="w-full sm:basis-3/4">
+          <% flash.each do |type, msg| %>
+            <div>
+              <%= msg %>
+            <div/>
+          <% end %>
+         <%= yield %>
+        </main>
+      </div>
   </body>
 </html>
