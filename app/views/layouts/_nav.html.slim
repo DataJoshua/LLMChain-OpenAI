@@ -1,13 +1,7 @@
-div class="basis-1/4 fixed top-5 left-5 sm:sticky sm:top-0 sm:left-0" data-controller="nav"
-  button class="sm:hidden" data-action="click->nav#handleOnClick"
-    | Open
-  nav class="bg-slate-100 sm:block hidden fixed sm:relative top-0 lg:block left-0 m-0 p-5 min-h-screen" data-nav-target="menu" 
-    button class="sm:hidden" data-action="click->nav#handleOnClick"
-      | X
-    ul
-      li
-        = link_to "My models", chains_path
-      li
-        = link_to "Create new model", new_chain_path
-      li
-        = link_to "Log out", destroy_user_session_path, data:  { turbo_method: :delete }
+nav class="bg-slate-200 py-5 px-[10%] flex justify-center gap-5"
+  div
+    h1 
+      | Logo
+  ul
+    li
+      = link_to "chains", chains_path

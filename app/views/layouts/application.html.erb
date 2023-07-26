@@ -12,8 +12,9 @@
   </head>
 
   <body>
-      <div class="flex">
-        <%= render "layouts/nav" %>
+      <%= render "layouts/nav" %>
+      <div class="flex xl:px-[10%]">
+        <%= render "layouts/aside" %>
         <main class="w-full sm:basis-3/4">
           <% flash.each do |type, msg| %>
             <div>
