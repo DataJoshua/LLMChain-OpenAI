@@ -37,7 +37,7 @@ class ChainsController < ApplicationController
   private
 
   def chain_params
-    params.require(:chain).permit(:index_name)
+    params.require(:chain).permit(:index_name, :description)
   end
 
   def set_chain
@@ -45,6 +45,6 @@ class ChainsController < ApplicationController
   end
 
   def create_chain
-    @create_chain = Chains::Create.call(user: current_user, index_name: chain_params[:index_name])
+    @create_chain = Chains::Create.call(user: current_user, chain_params: chain_params)
   end
 end

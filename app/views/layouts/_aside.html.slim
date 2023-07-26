@@ -1,12 +1,11 @@
-div
-  div
-  div class="basis-1/4 fixed top-5 left-5 sm:sticky sm:top-0 sm:left-0" data-controller="nav"
+div class="sm:basis-[25%] lg:basis-[20%] xl:basis-[15%]"
+  div class="text-white fixed top-5 left-5 sm:sticky sm:top-0 sm:left-0" data-controller="nav"
     button class="sm:hidden" data-action="click->nav#handleOnClick"
       | Open
-    nav class="bg-slate-100 sm:block hidden fixed sm:relative top-0 lg:block left-0 m-0 p-5 min-h-screen" data-nav-target="menu" 
+    nav class="bg-slate-800 sm:block hidden fixed sm:relative top-0 lg:flex left-0 m-0 p-5 min-h-screen" data-nav-target="menu" 
       button class="sm:hidden" data-action="click->nav#handleOnClick"
         | X
-      ul
+      ul class="flex flex-col gap-5 my-8"
         li
           = link_to "My models", chains_path
         li
