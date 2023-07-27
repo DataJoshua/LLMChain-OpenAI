@@ -6,13 +6,13 @@ module Chains
       delegate :user, :chain_params,  to: :context
   
       def call
-        context.fail!(error: "Chain not created") unless chain.save
+        context.fail!(error: chain.errors) unless chain.save
       end
       
       private
   
       def chain
-        Chain.new(chain_params.merge({index_name: "#{user.id}_#{chain_params[:index_name]}", cluster_name: chain_params[:index_name] , user: user}))
+        chain_obj ||= Chain.new(index_name: "#{user.id}_#{chain_params[:index_name]}", cluster_name: chain_params[:index_name] , user: user, description: chain_params[:description])
       end
     end
   end
