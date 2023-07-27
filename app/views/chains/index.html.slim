@@ -1,4 +1,6 @@
-- @chains.each do |c|
-  h1
-    = c.cluster_name
-  = link_to "train or ask this model", chain_path(c)
+h1 class="text-3xl text-white text-center my-5"
+  | My models 
+
+div class="grid grid-cols-1 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-5 px-5 gap-5"
+  - @chains.each do |c|
+    = render "chain", chain: c

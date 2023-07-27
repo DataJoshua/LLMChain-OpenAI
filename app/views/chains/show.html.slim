@@ -1,6 +1,7 @@
 h1
   = @chain.cluster_name
-
+p
+  = @chain.description
 = form_with scope: :teach, url: chain_teach_index_path(@chain) do |f|
   = f.text_field :content
   = f.submit
