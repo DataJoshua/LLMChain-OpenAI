@@ -1,4 +1,7 @@
-= form_with model: @chain do |f|
-  = f.text_field :index_name
-  = f.text_field :description
-  = f.submit
+div class="flex justify-center mt-8 text-white"
+  = form_with model: @chain, class: "bg-gray-900 p-8 rounded shadow flex flex-col gap-5" do |f|
+    h1 class="text-3xl"
+      | Create a new Chain:
+    = f.text_field :index_name, class: "bg-[#303245] rounded-lg", placeholder: "name"
+    = f.text_area :description, class: "bg-[#303245] rounded-lg max-h-[200px] min-h-[70px]", placeholder: "description"
+    = f.submit class: "bg-blue-600 rounded-lg border-0 box-border text-white cursor-pointer h-10 hover:bg-blue-500 hover:cursor-pointer mt-5 w-full"
