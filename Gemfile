@@ -80,6 +80,8 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'inline_svg'
+
 gem "dotenv-rails", "~> 2.8"
 
 gem "slim-rails", "~> 3.6"

@@ -1,14 +1,22 @@
-div class="sm:basis-[25%] lg:basis-[20%] xl:basis-[15%]"
-  div class="text-white fixed top-5 left-5 sm:sticky sm:top-0 sm:left-0" data-controller="nav"
-    button class="sm:hidden" data-action="click->nav#handleOnClick"
-      | Open
-    nav class="bg-slate-800 sm:block hidden fixed sm:relative top-0 lg:flex left-0 m-0 p-5 min-h-screen" data-nav-target="menu" 
-      button class="sm:hidden" data-action="click->nav#handleOnClick"
-        | X
-      ul class="flex flex-col gap-5 my-8"
-        li
-          = link_to "My models", chains_path
-        li
-          = link_to "Create new model", new_chain_path
-        li
-          = link_to "Log out", destroy_user_session_path, data:  { turbo_method: :delete }
+div class="sm:basis-[25%] lg:basis-[20%] xl:basis-[15%] rounded-lg bg-slate-100 relative lg:flex m-0 min-h-screen" data-controller="nav"
+  button data-action="click->nav#handleOnClick"
+    | X
+  
+  ul class="flex flex-col my-8 w-full"
+    li
+      = link_to chains_path, class: "w-full sm:pl-6 flex gap-3 items-center hover:bg-slate-200 p-3" do
+        = inline_svg_tag("dashboard.svg", width: 30, height: 30)
+        h1 class="hidden sm:block" data-nav-target="menuText"
+          | My Models
+    li
+      = link_to new_chain_path, class: "flex sm:pl-6 items-center gap-3 p-3 hover:bg-slate-200" do
+        = inline_svg_tag("new.svg", width: 30, height: 30)
+        h1 class="hidden sm:block" data-nav-target="menuText"
+          | New Model
+      end
+    li
+      = link_to destroy_user_session_path, data:  { turbo_method: :delete }, class: "flex sm:pl-6 items-center gap-3 p-3 hover:bg-slate-200" do
+        = inline_svg_tag("logout.svg", width: 30, height: 30)
+        h1 class="hidden sm:block" data-nav-target="menuText"
+          | Log Out
+      end
