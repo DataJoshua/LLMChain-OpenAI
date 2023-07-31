@@ -1,22 +1,19 @@
-div class="sm:basis-[25%] lg:basis-[20%] xl:basis-[15%] rounded-lg bg-slate-100 relative lg:flex m-0 min-h-screen" data-controller="nav"
-  button data-action="click->nav#handleOnClick"
-    | X
-  
+div class="sm:basis-[25%] lg:basis-[20%] xl:basis-[15%] rounded-lg bg-slate-100 m-0 min-h-screen" data-controller="nav"
   ul class="flex flex-col my-8 w-full"
     li
       = link_to chains_path, class: "w-full sm:pl-6 flex gap-3 items-center hover:bg-slate-200 p-3" do
         = inline_svg_tag("dashboard.svg", width: 30, height: 30)
-        h1 class="hidden sm:block" data-nav-target="menuText"
+        h1 data-nav-target="menuText"
           | My Models
     li
       = link_to new_chain_path, class: "flex sm:pl-6 items-center gap-3 p-3 hover:bg-slate-200" do
         = inline_svg_tag("new.svg", width: 30, height: 30)
-        h1 class="hidden sm:block" data-nav-target="menuText"
+        h1 data-nav-target="menuText"
           | New Model
       end
     li
       = link_to destroy_user_session_path, data:  { turbo_method: :delete }, class: "flex sm:pl-6 items-center gap-3 p-3 hover:bg-slate-200" do
         = inline_svg_tag("logout.svg", width: 30, height: 30)
-        h1 class="hidden sm:block" data-nav-target="menuText"
+        h1 data-nav-target="menuText"
           | Log Out
       end
