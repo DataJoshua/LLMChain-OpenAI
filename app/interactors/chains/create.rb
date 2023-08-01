@@ -2,6 +2,6 @@ module Chains
   class Create
     include Interactor::Organizer
 
-    organize Chains::Create::Execute, Chains::Create::Train
+    organize Chains::Create::Execute
   end
 end
