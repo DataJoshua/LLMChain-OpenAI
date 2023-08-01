@@ -82,6 +82,8 @@ end
 
 gem 'inline_svg'
 
+gem "image_processing", ">= 1.2"
+
 gem "dotenv-rails", "~> 2.8"
 
 gem "slim-rails", "~> 3.6"
