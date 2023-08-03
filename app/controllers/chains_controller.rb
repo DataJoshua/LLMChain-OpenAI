@@ -37,7 +37,7 @@ class ChainsController < ApplicationController
   private
 
   def chain_params
-    params.require(:chain).permit(:index_name, :description)
+    params.require(:chain).permit(:index_name, :description, :doc)
   end
 
   def set_chain

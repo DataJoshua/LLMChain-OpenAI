@@ -1,6 +1,7 @@
-div
+div class="text-white"
   h1
     = @chain.cluster_name
+    = url_for(@chain.doc)
   p
     = @chain.description
   = form_with scope: :teach, url: chain_teach_index_path(@chain), class:"text-slate-800" do |f|

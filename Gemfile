@@ -12,6 +12,8 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
+gem "pdf-reader"
+
 gem "langchainrb"
 
 gem "qdrant-ruby", "~> 0.9.0"
@@ -81,6 +83,8 @@ group :test do
 end
 
 gem 'inline_svg'
+
+gem "image_processing", ">= 1.2"
 
 gem "dotenv-rails", "~> 2.8"
 
