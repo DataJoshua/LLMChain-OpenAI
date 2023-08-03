@@ -11,6 +11,16 @@ application.register("nav", class extends Controller {
   handleOnClick(){
     this.menuTextTarget.style.display = "none"
   }
+});
+
+application.register("train", class extends Controller {
+  static targets = ["doc"]
+  connect() {
+
+  }
+  handleFiles(e) { 
+    console.log(this.docTarget.files[0]);
+  }
 })
 
 // Configure Stimulus development experience

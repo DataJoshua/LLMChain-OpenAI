@@ -1,7 +1,6 @@
 div class="text-white"
   h1
     = @chain.cluster_name
-    = url_for(@chain.doc)
   p
     = @chain.description
   = form_with scope: :teach, url: chain_teach_index_path(@chain), class:"text-slate-800" do |f|
@@ -11,6 +10,12 @@ div class="text-white"
   = form_with scope: :question, url: chain_question_index_path(@chain) do |f|
     = f.text_field :content
     = f.submit
+
+  div data-controller="train"
+    = form_with url: "/chains/#{@chain.id}/train" do |f|
+      = f.file_field :doc, data: { action: "change->train#handleFiles", train_target: "doc" }
+      = f.text_field :doc_url, class: "hidden"
+      = f.submit "train"
 
   div class="text-white"
     - @chain.messages.each do |m|

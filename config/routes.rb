@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   resources :interfaces
   
-  resources :chains do  
+  resources :chains do
+    post "/train", to: "chains#train"
     resources :question, only: %i[create]
     resources :teach, only: %i[create]
   end

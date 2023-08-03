@@ -2,6 +2,10 @@ class ChainPolicy < ApplicationPolicy
   def show?
     owner?
   end
+
+  def train?
+    owner?
+  end
   
   def index?
     true

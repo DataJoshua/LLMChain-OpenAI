@@ -1,8 +1,9 @@
 class ChainsController < ApplicationController
   before_action :authenticate_user!
   before_action -> { authorize! Chain }, only: %i[index new create]
+  before_action -> {@chain = current_user.chains.find(params[:chain_id])}, only: %i[train]
   before_action :set_chain, only: %i[edit update destroy show]
-  before_action -> { authorize! @chain }, only: %i[show edit update destroy]
+  before_action -> { authorize! @chain }, only: %i[show edit update destroy train]
 
   def show
   end
@@ -23,6 +24,9 @@ class ChainsController < ApplicationController
     end
 
     redirect_to root_path
+  end
+
+  def train
   end
 
   def edit
