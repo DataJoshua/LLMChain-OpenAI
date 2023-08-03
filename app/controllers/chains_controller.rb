@@ -40,6 +40,10 @@ class ChainsController < ApplicationController
 
   private
 
+  def train_params
+    params.require(:train).permit(:doc_url, :doc)
+  end
+
   def chain_params
     params.require(:chain).permit(:index_name, :description, :doc)
   end
