@@ -25,4 +25,11 @@
         </main>
       </div>
   </body>
+
+  <script>
+    const ENV_VARS = {
+      SUPA_URL : "<%= ENV.fetch("SUPA_URL", "") %>",
+      SUPA_KEY : "<%= ENV.fetch("SUPA_KEY", "") %>"
+    }
+  </script>
 </html>

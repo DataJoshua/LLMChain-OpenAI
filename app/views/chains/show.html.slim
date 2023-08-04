@@ -14,7 +14,7 @@ div class="text-white"
   div data-controller="train"
     = form_with scope: :train, url: "/chains/#{@chain.id}/train" do |f|
       = f.file_field :doc, data: { action: "change->train#handleFiles", train_target: "doc" }
-      = f.text_field :doc_url, class: "hidden"
+      = f.text_field :doc_url, class: "hidden", data: {train_target: "input"}
       = f.submit "train"
 
   div class="text-white"
